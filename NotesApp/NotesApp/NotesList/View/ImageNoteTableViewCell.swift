@@ -22,7 +22,6 @@ final class ImageNoteTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         
         imageView.layer.cornerRadius = 5
-        imageView.image = UIImage(named: "image")
         imageView.layer.masksToBounds = true //не отображать те части которые выходят за пределы UIImageView
         imageView.contentMode = .scaleAspectFill
         

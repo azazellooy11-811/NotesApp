@@ -19,6 +19,11 @@ class NotesListViewController: UITableViewController {
         
         setupTableView()
         setupToolBar()
+        registerObserver()
+        
+        viewModel?.reloadTable = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +53,21 @@ class NotesListViewController: UITableViewController {
     @objc
     private func addAction() {
         let noteViewController = NoteViewController()
+        let viewModel = NoteViewModel(note: nil)
+        noteViewController.viewModel = viewModel
         navigationController?.pushViewController(noteViewController, animated: true)
+    }
+    
+    private func registerObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateData),
+                                               name: NSNotification.Name("Update"),
+                                               object: nil)
+    }
+    
+    @objc
+    private func updateData() {
+        viewModel?.getNotes()
     }
 }
 
@@ -56,6 +75,10 @@ class NotesListViewController: UITableViewController {
 extension NotesListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         viewModel?.sections.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel?.sections[section].title
     }
     
     override func tableView(_ tableView: UITableView,
@@ -89,7 +112,8 @@ extension NotesListViewController {
         guard let note = viewModel?.sections[indexPath.section].items[indexPath.row]
                 as? Note else { return }
         let noteViewController = NoteViewController()
-        noteViewController.set(note: note)
+        let viewModel = NoteViewModel(note: note)
+        noteViewController.viewModel = viewModel
         navigationController?.pushViewController(noteViewController, animated: true)
     }
 }
