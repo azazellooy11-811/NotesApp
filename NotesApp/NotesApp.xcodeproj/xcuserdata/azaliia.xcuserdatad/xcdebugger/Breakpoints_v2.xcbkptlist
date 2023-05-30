@@ -3,4 +3,54 @@
    uuid = "8E130A0C-A1D1-4DF3-A0B5-DF00542EB56B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7FAF2CB-B0A4-432E-9E43-1F6A1BFFC3A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NotesApp/Note/ViewModel/NoteViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "image"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C7FAF2CB-B0A4-432E-9E43-1F6A1BFFC3A4 - a1853e0c633a59c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.NoteViewModel.image.getter : Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azaliia/Projects/NotesApp/NotesApp/NotesApp/Note/ViewModel/NoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "C7FAF2CB-B0A4-432E-9E43-1F6A1BFFC3A4 - a1853e0c633a59c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NotesApp.NoteViewModel.image.getter : Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "NotesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azaliia/Projects/NotesApp/NotesApp/NotesApp/Note/ViewModel/NoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "540">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

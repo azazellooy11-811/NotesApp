@@ -5,13 +5,14 @@
 //  Created by Азалия Халилова on 20.05.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol NotesListViewModelProtocol {
     var sections: [TableViewSection] { get }
     var reloadTable: (() -> Void)? { get set }
     
-    func getNotes() 
+    func getNotes()
+    func getImage(for url: URL) -> UIImage?
 }
 
 final class NotesListViewModel: NotesListViewModelProtocol {
@@ -49,7 +50,10 @@ final class NotesListViewModel: NotesListViewModelProtocol {
                                              items: groupedObjects[key] ?? []))
         }
     }
-                            
+    
+    func getImage(for url: URL) -> UIImage? {
+        return FileManagerPersistent.read(from: url)
+    }
     
     private func setMocks() {
         let section = TableViewSection(title: "20 May 2023",
