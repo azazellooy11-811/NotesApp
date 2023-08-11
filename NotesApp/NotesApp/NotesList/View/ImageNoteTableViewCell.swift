@@ -22,7 +22,6 @@ final class ImageNoteTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         
         imageView.layer.cornerRadius = 5
-        imageView.image = UIImage(named: "image")
         imageView.layer.masksToBounds = true //не отображать те части которые выходят за пределы UIImageView
         imageView.contentMode = .scaleAspectFill
         
@@ -49,10 +48,10 @@ final class ImageNoteTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Methods
-    func set(note: Note) {
+    func set(note: Note, image: UIImage) {
         titleLabel.text = note.title
-        guard let imageData = note.image,
-              let image = UIImage(data: imageData) else { return }
+//        guard let imageData = note.image,
+//              let image = UIImage(data: imageData) else { return }
         attachmentView.image = image
     }
     

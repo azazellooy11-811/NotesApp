@@ -9,8 +9,7 @@ import Foundation
 
 struct Note: TableViewItemProtocol {
     let title: String
-    let description: String
+    let description: String?
     let date: Date
-    let imageUrl: String?
-    let image: Data?
+    let imageUrl: URL?
 }
